@@ -40,6 +40,9 @@ set cursorline
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
+""Highlight *.md files in markdown
+au BufNewFile,BufRead *.md set filetype=markdown
+
 ""Templates
 :autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 
