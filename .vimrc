@@ -81,3 +81,7 @@ let twitvim_enable_python = 1
 highlight ColorColumn ctermbg=grey ctermfg=white guibg=grey guifg=white
 set colorcolumn=80
 
+""Copy/Paste
+nmap <C-V> "+gP
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y
