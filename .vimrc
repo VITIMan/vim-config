@@ -22,7 +22,7 @@ endif
 
 
 ""no bells
-set visualbell
+set novisualbell
 set noerrorbells
 
 ""search tips
@@ -150,6 +150,9 @@ nmap <leader>v "+gP
 imap <leader>v <ESC><C-V>i
 vmap <leader>c "+y
 
+nnoremap <leader>+ :call MoveToNextTab()<CR>
+nnoremap <leader>- :call MoveToPrevTab()<CR>
+
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
@@ -158,3 +161,46 @@ function! HasPaste()
     return ''
 endfunction
 
+function MoveToPrevTab()
+  "there is only one window
+  if tabpagenr('$') == 1 && winnr('$') == 1
+    return
+  endif
+  "preparing new window
+  let l:tab_nr = tabpagenr('$')
+  let l:cur_buf = bufnr('%')
+  if tabpagenr() != 1
+    close!
+    if l:tab_nr == tabpagenr('$')
+      tabprev
+    endif
+    sp
+  else
+    close!
+    exe "0tabnew"
+  endif
+  "opening current buffer in new window
+  exe "b".l:cur_buf
+endfunc
+
+function MoveToNextTab()
+  "there is only one window
+  if tabpagenr('$') == 1 && winnr('$') == 1
+    return
+  endif
+  "preparing new window
+  let l:tab_nr = tabpagenr('$')
+  let l:cur_buf = bufnr('%')
+  if tabpagenr() < tab_nr
+    close!
+    if l:tab_nr == tabpagenr('$')
+      tabnext
+    endif
+    sp
+  else
+    close!
+    tabnew
+  endif
+  "opening current buffer in new window
+  exe "b".l:cur_buf
+endfunc
