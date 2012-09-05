@@ -1,5 +1,9 @@
 syntax on
-colorscheme blackboard
+if has("gui_macvim")
+  colorscheme blackboard
+else
+  colorscheme koehler
+endif
 
 let mapleader=","
 
@@ -20,10 +24,15 @@ if has("gui_running")
 
 endif
 
-
 ""no bells
-set novisualbell
+if has("gui_macvim")
+  " set macvim specific stuff
+  set visualbell
+else
+  set novisualbell
+endif
 set noerrorbells
+
 
 ""search tips
 set incsearch
