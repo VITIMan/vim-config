@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/viti/dev/robots/class/class_en_in'
 let g:netrw_dirhist_2='/home/viti/Dropbox/posotscripts/correo_estado'
 let g:netrw_dirhist_3='/home/viti/dev/posot/classi'
 let g:netrw_dirhist_4='/home/viti/dev/biolavado/biolavado'
+let g:netrw_dirhist_5='/Users/vitiman/Desktop/Paradigma.visc'
