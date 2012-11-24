@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/jedi-vim"]
 	path = .vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule ".vim/bundle/tetris-vim"]
+	path = .vim/bundle/tetris-vim
+	url = git://github.com/vim-scripts/TeTrIs.vim.git
