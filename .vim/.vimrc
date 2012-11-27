@@ -131,6 +131,18 @@ au BufNewFile,BufRead *.md set filetype=markdown
 ""Templates
 :autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 
+"" Svn blame using visual selection
+vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+"" Not pop-up on dot jedi-vim
+let g:jedi#popup_on_dot = 0
+
+"" ctrlp in new tab
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("e")': [],
+  \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
+  \ }
+
 ""Para evitar trailing de whitespaces
 highlight TrailWhitespace ctermbg=blue guibg=blue
 match TrailWhitespace /\s\+$\| \+\ze\t/
