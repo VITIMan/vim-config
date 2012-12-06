@@ -12,8 +12,8 @@ if has("gui_running")
   highlight TrailWhitespace ctermbg=blue guibg=blue
   match TrailWhitespace /\s\+$\| \+\ze\t/
   ""80 characters vertical line
-  ""highlight ColorColumn ctermbg=grey ctermfg=white guibg=grey guifg=white
-  ""set colorcolumn=80
+  highlight ColorColumn ctermbg=grey ctermfg=white guibg=grey guifg=white
+  set colorcolumn=80
   ""GUI is running or is about to start.
   ""Maximize gvim window.
   set lines=999 columns=999
@@ -49,8 +49,11 @@ set sw=4
 set foldmethod=indent
 set foldlevel=99
 
-""set autoindent
-""set smartindent
+set autoindent
+set smartindent
+
+""Vim does not support backspace in Insert Mode (vim terminal OSX)
+set backspace=indent,eol,start
 
 " Show matching brackets when text indicator is over them
 set showmatch
@@ -94,7 +97,7 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+noremap <Leader>M mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 ""For pyflakes
 filetype on
@@ -136,6 +139,8 @@ vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 
 "" Not pop-up on dot jedi-vim
 let g:jedi#popup_on_dot = 0
+"" Not show function definition
+let g:jedi#show_function_definition = "0"
 
 "" ctrlp in new tab
 let g:ctrlp_prompt_mappings = {
