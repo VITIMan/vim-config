@@ -176,6 +176,8 @@ map <leader>k :Calendar<CR>
 "":Gol - Game of life
 ""Flake 8 Pep8
 autocmd FileType python map <buffer> <leader>8 :call Flake8()<CR>
+let g:flake8_max_line_length=119
+
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -186,8 +188,8 @@ nmap <leader>w :w!<cr>
 let twitvim_enable_python = 1
 
 ""80 characters vertical line
-""highlight ColorColumn ctermbg=grey ctermfg=white guibg=grey guifg=white
-""set colorcolumn=80
+highlight ColorColumn ctermbg=grey ctermfg=white guibg=grey guifg=white
+set colorcolumn=119
 
 map <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
