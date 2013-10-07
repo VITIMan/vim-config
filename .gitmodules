@@ -22,3 +22,9 @@
 [submodule ".vim/bundle/tetris-vim"]
 	path = .vim/bundle/tetris-vim
 	url = git://github.com/vim-scripts/TeTrIs.vim.git
+[submodule ".vim/bundle/vim-powerline"]
+	path = .vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive

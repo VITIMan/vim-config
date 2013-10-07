@@ -88,7 +88,7 @@ set nowb
 set noswapfile
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
-func! DeleteTrailingWS()
+func! DeleteTrailingWS()       
   exe "normal mz"
   %s/\s\+$//ge
   exe "normal `z"
@@ -121,7 +121,10 @@ map <leader>pp :setlocal paste!<cr>
 ""Display one more bottom line
 set laststatus=2
 ""Display filename and highlight language interpreter
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\%{GitBranchInfoString()}\ %{HasPaste()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+""set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\%{GitBranchInfoString()}\ %{HasPaste()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+set nocompatible
+let g:Powerline_symbols = 'unicode'
 
 ""Highlight current line.
 set cursorline
