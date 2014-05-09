@@ -145,6 +145,13 @@ let g:jedi#popup_on_dot = 0
 "" Not show function definition
 let g:jedi#show_function_definition = "0"
 
+"" supertab
+"" au FileType python set omnifunc=pythoncomplete#Complete
+"" let g:SuperTabDefaultCompletionType = "context"
+"" set completeopt=menuone,longest,preview
+"" snipmate
+"" let g:snipMateAllowMatchingDot = 0
+
 "" ctrlp in new tab
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("e")': [],
